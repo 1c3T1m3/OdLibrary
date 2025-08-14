@@ -10,17 +10,24 @@ function Book(title, author, nOfPages, read) {
   this.nOfPages = nOfPages;
   this.author = author;
   this.read = read;
-  info = (this.title, this.author, this.nOfPages, "pages", this.read)
+  this.BuID = crypto.randomUUID()
+  info = (this.title, this.author, this.nOfPages, "pages", this.read, this.BuID)
 /*  this.sayName = function() {
     console.log(this.title, this.author, this.nOfPages, "pages", this.read)
   };*/
   return info;
 }
 
-function addBookToLibrary() {
+libraList = []
+
+function addBookToLibrary(daNewBook) {
   // take params, create a book then store it in the array
-  crypto.randomUUID()
+  libraList.push(daNewBook)
 }
 
-NiggaLikeMe = new Book("nigger","nog","nogger","Oh, yes sir!")
-console.log(NiggaLikeMe);
+NiggaLikeMe = new Book("nigger","nog","nogger","Oh, yes sir!");
+ThisBookBeGud = new Book("peepee", "poopoo", "wet bed", "u kno i have nigga!")
+
+addBookToLibrary(NiggaLikeMe);
+addBookToLibrary(ThisBookBeGud);
+console.table(libraList)
