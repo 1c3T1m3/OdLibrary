@@ -10,14 +10,42 @@ p{
     text-align: center;
 }
 
+#nuBookBtn{
+    text-align: center;
+}
+
 button{
-    background-color: aquamarine;
+    background-color: orange;
     color: red;
     font-size: 48px;
     font-family:sans-serif;
     font-weight: bold;
     text-align: center;
-    position: absolute;
-    left: 42%;
     border: 4px solid red;
+}
+
+input{
+    background-color: orange;
+    border: 2px solid red;
+    margin: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.frmBtn{
+    background-color: red;
+    color: yellow;
+    font-size: 24px;
+    font-weight: bold;
+    border: 4px solid orange;
+}
+
+form{
+    margin: 4px;
+    text-align: center;
+}
+
+label{
+    color: red;
+    font-weight: bold;
 }
