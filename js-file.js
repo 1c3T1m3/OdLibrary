@@ -20,7 +20,7 @@ libraList = []
 
 function addBookToLibrary(daNewBook) {
   // take params, create a book then store it in the array
-  libraList.push(daNewBook)
+  libraList.push(daNewBook);
   console.table(libraList);
 }
 
@@ -36,13 +36,18 @@ daCounter = 0;
 // Create a break line element
 var br = document.createElement("br"); 
 function GFG_Fun() {
-  
+          function usefulScript(){
+          if(tstTtl.value != '' && tstAthr.value != '' && tstPgs.value != ''){
+          nuBuk = new Book(tstTtl.value, tstAthr.value, tstPgs.value, tstRd.checked) 
+          addBookToLibrary(nuBuk);}
+        }  
 if  (daCounter < 1){ //This prevents the button from creating more than one submit forms.
   daCounter += 1;
   // Create a form dynamically
 var form = document.createElement("form");
 form.setAttribute("method", "get");
 form.setAttribute("action", "javascript:alert('Book title: '+ tstTtl.value + '  Author: ' + tstAthr.value+ '  Pages: ' + tstPgs.value + '  Read: ' + tstRd.checked);");
+form.addEventListener("submit", usefulScript);
 
 // Create an input element for Full Name
 var TITLE = document.createElement("input");
@@ -117,10 +122,5 @@ TITLE.setAttribute("placeholder", "Title");
         tstTtl = document.getElementById("title");
         tstAthr = document.getElementById("author");
         tstPgs = document.getElementById("noOfPages");
-        tstRd = document.getElementById("read");
-
-        if(tstTtl.value != '' && tstAthr.value != '' && tstPgs.value != ''){
-          nuBuk = new Book(tstTtl.value, tstAthr.value, tstPgs.value, tstRd.checked) 
-          addBookToLibrary(nuBuk);    
-          console.table(libraList);}  
+        tstRd = document.getElementById("read");      
       }
