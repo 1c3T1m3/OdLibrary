@@ -24,22 +24,19 @@ function addBookToLibrary(daNewBook) {
   console.table(libraList);
 }
 
-NiggaLikeMe = new Book("nigger","nog","nogger","Oh, yes sir!");
-ThisBookBeGud = new Book("peepee", "poopoo", "wet bed", "u kno i have nigga!")
-
-addBookToLibrary(NiggaLikeMe);
-addBookToLibrary(ThisBookBeGud);
-
 var down = document.getElementById("GFG_DOWN");
 daCounter = 0;
           
 // Create a break line element
-var br = document.createElement("br"); 
+var br = document.createElement("br");
+var cunta = 1; 
 function GFG_Fun() {
           function usefulScript(){
           if(tstTtl.value != '' && tstAthr.value != '' && tstPgs.value != ''){
           nuBuk = new Book(tstTtl.value, tstAthr.value, tstPgs.value, tstRd.checked) 
-          addBookToLibrary(nuBuk);}
+          addBookToLibrary(nuBuk);
+          document.getElementById("bookData"+String(cunta)).innerHTML =String(tstTtl.value)+"\n"+String(tstAthr.value)+"\n"+String(tstPgs.value)+"\n"+String(tstRd.checked);
+          cunta +=1;}          
         }  
 if  (daCounter < 1){ //This prevents the button from creating more than one submit forms.
   daCounter += 1;

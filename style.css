@@ -49,3 +49,16 @@ label{
     color: red;
     font-weight: bold;
 }
+
+#Books{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 4px;
+}
+#Books pre{
+    border: solid red 4px;
+    font-size: 34px;
+    color:red;
+    font-family:sans-serif;
+    font-weight: bold;
+}
