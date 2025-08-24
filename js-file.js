@@ -29,14 +29,12 @@ daCounter = 0;
           
 // Create a break line element
 var br = document.createElement("br");
-var cunta = 1; 
 function GFG_Fun() {
           function usefulScript(){
           if(tstTtl.value != '' && tstAthr.value != '' && tstPgs.value != ''){
           nuBuk = new Book(tstTtl.value, tstAthr.value, tstPgs.value, tstRd.checked) 
           addBookToLibrary(nuBuk);
-          document.getElementById("bookData"+String(cunta)).innerHTML =String(tstTtl.value)+"\n"+String(tstAthr.value)+"\n"+String(tstPgs.value)+"\n"+String(tstRd.checked);
-          cunta +=1;}          
+          document.getElementById("Books").appendChild(document.createElement("pre")).innerHTML ="Title: "+String(tstTtl.value)+"\n"+"Author: "+String(tstAthr.value)+"\n"+"Pages: "+String(tstPgs.value)+"\n"+"Read: "+String(tstRd.checked);}          
         }  
 if  (daCounter < 1){ //This prevents the button from creating more than one submit forms.
   daCounter += 1;
@@ -82,11 +80,6 @@ TITLE.setAttribute("placeholder", "Title");
             s.setAttribute("type", "submit");
             s.setAttribute("value", "Submit");
             s.setAttribute("class", "frmBtn");
-            // create a cancel button
-            var c = document.createElement("input");
-            c.setAttribute("type", "submit");
-            c.setAttribute("value", "Cancel");
-            c.setAttribute("class", "frmBtn");
 
             // Append the full name input to the form
             form.appendChild(TITLE); 
@@ -109,8 +102,6 @@ TITLE.setAttribute("placeholder", "Title");
             
             // Append the submit button to the form
             form.appendChild(s);
-            // Append the submit button to the form
-            form.appendChild(c); 
  
 
             document.getElementsByTagName("body")[0]
