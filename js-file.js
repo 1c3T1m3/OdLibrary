@@ -8,8 +8,8 @@ function Book(title, author, nOfPages, read) {
   this.nOfPages = nOfPages;
   this.author = author;
   this.read = read;
-  this.BuID = crypto.randomUUID()
-  info = (this.title, this.author, this.nOfPages, "pages", this.read, this.BuID)
+  /*this.BuID = crypto.randomUUID()*/
+  info = (this.title, this.author, this.nOfPages, "pages", this.read/*, this.BuID*/)
 /*  this.sayName = function() {
     console.log(this.title, this.author, this.nOfPages, "pages", this.read)
   };*/
@@ -34,7 +34,14 @@ function GFG_Fun() {
           if(tstTtl.value != '' && tstAthr.value != '' && tstPgs.value != ''){
           nuBuk = new Book(tstTtl.value, tstAthr.value, tstPgs.value, tstRd.checked) 
           addBookToLibrary(nuBuk);
-          document.getElementById("Books").appendChild(document.createElement("pre")).innerHTML ="Title: "+String(tstTtl.value)+"\n"+"Author: "+String(tstAthr.value)+"\n"+"Pages: "+String(tstPgs.value)+"\n"+"Read: "+String(tstRd.checked);}          
+          var prb = document.createElement("pre")
+          document.getElementById("Books").appendChild(prb).innerHTML ="Title: "+String(tstTtl.value)+"\n"+"Author: "+String(tstAthr.value)+"\n"+"Pages: "+String(tstPgs.value)+"\n"+"Read: "+String(tstRd.checked)+"\n";
+          var randID = crypto.randomUUID();
+          prb.setAttribute("id", randID);
+          prb.appendChild(document.createElement("button")).innerHTML ="🗑️";
+          document.getElementById(randID).addEventListener("click", function () {
+            prb.remove();
+          });}
         }  
 if  (daCounter < 1){ //This prevents the button from creating more than one submit forms.
   daCounter += 1;
@@ -110,5 +117,5 @@ TITLE.setAttribute("placeholder", "Title");
         tstTtl = document.getElementById("title");
         tstAthr = document.getElementById("author");
         tstPgs = document.getElementById("noOfPages");
-        tstRd = document.getElementById("read");      
+        tstRd = document.getElementById("read");     
       }
